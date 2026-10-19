@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVision | Business Intelligence Platform</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;600;800;900&family=Poppins:wght@300;400;600;800;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="logo">DATAVISION</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">HOME</a>
+            <a href="#subscribe" class="nav-link">SUBSCRIBE</a>
+        </div>
+    </nav>
+
+    <!-- Social Media Sidebar -->
+    <div class="social-sidebar">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    <!-- Chat Button -->
+    <button class="chat-button">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="geometric-decoration">
+            <div class="line-decoration line-1"></div>
+            <div class="line-decoration line-2"></div>
+            <div class="line-decoration line-3"></div>
+            <div class="line-decoration line-4"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">[ REAL-TIME ANALYTICS ]</div>
+            <h1 class="hero-title">
+                <span class="title-line">DATA<span class="title-accent">·</span>DRIVEN</span>
+                <span class="title-line title-emphasis">INSIGHTS</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="subtitle-bracket">[</span> 
+                FOR MODERN BUSINESS 
+                <span class="subtitle-bracket">]</span>
+            </p>
+            <div class="hero-tagline">
+                <span class="tagline-number">01</span>
+                <span class="tagline-divider">|</span>
+                <span>Transform Numbers into Decisions</span>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-wrapper">
+                        <span class="stat-prefix">$</span>
+                        <div class="stat-number" data-target="2847">0</div>
+                        <span class="stat-suffix">K</span>
+                    </div>
+                    <div class="stat-label">ACTIVE CLIENTS</div>
+                    <div class="stat-bar"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-wrapper">
+                        <span class="stat-prefix">#</span>
+                        <div class="stat-number" data-target="1524">0</div>
+                        <span class="stat-suffix">+</span>
+                    </div>
+                    <div class="stat-label">DATA SOURCES</div>
+                    <div class="stat-bar"></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-wrapper">
+                        <div class="stat-number" data-target="99.8">0</div>
+                        <span class="stat-suffix">%</span>
+                    </div>
+                    <div class="stat-label">UPTIME %</div>
+                    <div class="stat-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>SCROLL DOWN</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- KPI Dashboard -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">KEY PERFORMANCE INDICATORS</h2>
+                <p class="section-subtitle">Real-time business metrics at a glance</p>
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-value" data-target="2847500">$0</div>
+                        <div class="kpi-label">Total Revenue</div>
+                        <div class="kpi-change positive">
+                            <i class="fas fa-arrow-up"></i> 12.5%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-value" data-target="45829">0</div>
+                        <div class="kpi-label">Active Users</div>
+                        <div class="kpi-change positive">
+                            <i class="fas fa-arrow-up"></i> 8.3%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-value" data-target="15423">0</div>
+                        <div class="kpi-label">Total Orders</div>
+                        <div class="kpi-change negative">
+                            <i class="fas fa-arrow-down"></i> 3.2%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-value" data-target="67.8">0</div>
+                        <div class="kpi-label">Conversion Rate</div>
+                        <div class="kpi-change positive">
+                            <i class="fas fa-arrow-up"></i> 5.7%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="charts-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">TREND ANALYSIS</h2>
+                <p class="section-subtitle">Historical performance and predictions</p>
+                
+                <div class="time-filter">
+                    <button class="filter-btn active" data-period="7d">7D</button>
+                    <button class="filter-btn" data-period="1m">1M</button>
+                    <button class="filter-btn" data-period="3m">3M</button>
+                    <button class="filter-btn" data-period="1y">1Y</button>
+                    <button class="filter-btn" data-period="all">ALL</button>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Revenue Trend</h3>
+                        <div class="chart-info">
+                            <span class="live-indicator"><i class="fas fa-circle"></i> LIVE</span>
+                        </div>
+                    </div>
+                    <div class="chart-container" style="height: 320px;">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">User Growth</h3>
+                    </div>
+                    <div class="chart-container" style="height: 320px;">
+                        <canvas id="userChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Sales by Category</h3>
+                    </div>
+                    <div class="chart-container" style="height: 320px;">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Performance Metrics</h3>
+                    </div>
+                    <div class="chart-container" style="height: 320px;">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Market Share</h3>
+                    </div>
+                    <div class="chart-container" style="height: 320px;">
+                        <canvas id="marketShareChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Traffic Sources</h3>
+                    </div>
+                    <div class="chart-container" style="height: 320px;">
+                        <canvas id="trafficChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Comparison -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">DATA COMPARISON</h2>
+                <p class="section-subtitle">Quarter over quarter analysis</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="comparison-header">
+                        <h3>Q4 2024 vs Q3 2024</h3>
+                    </div>
+                    <div class="comparison-content">
+                        <div class="comparison-item">
+                            <span class="comparison-label">Revenue</span>
+                            <div class="comparison-bars">
+                                <div class="comparison-bar" style="width: 85%;">
+                                    <span>$2.8M</span>
+                                </div>
+                                <div class="comparison-bar secondary" style="width: 72%;">
+                                    <span>$2.4M</span>
+                                </div>
+                            </div>
+                            <span class="comparison-diff positive">+16.7%</span>
+                        </div>
+
+                        <div class="comparison-item">
+                            <span class="comparison-label">Users</span>
+                            <div class="comparison-bars">
+                                <div class="comparison-bar" style="width: 92%;">
+                                    <span>45.8K</span>
+                                </div>
+                                <div class="comparison-bar secondary" style="width: 85%;">
+                                    <span>42.3K</span>
+                                </div>
+                            </div>
+                            <span class="comparison-diff positive">+8.3%</span>
+                        </div>
+
+                        <div class="comparison-item">
+                            <span class="comparison-label">Orders</span>
+                            <div class="comparison-bars">
+                                <div class="comparison-bar" style="width: 78%;">
+                                    <span>15.4K</span>
+                                </div>
+                                <div class="comparison-bar secondary" style="width: 80%;">
+                                    <span>15.9K</span>
+                                </div>
+                            </div>
+                            <span class="comparison-diff negative">-3.1%</span>
+                        </div>
+
+                        <div class="comparison-item">
+                            <span class="comparison-label">Conversion</span>
+                            <div class="comparison-bars">
+                                <div class="comparison-bar" style="width: 68%;">
+                                    <span>67.8%</span>
+                                </div>
+                                <div class="comparison-bar secondary" style="width: 64%;">
+                                    <span>64.2%</span>
+                                </div>
+                            </div>
+                            <span class="comparison-diff positive">+5.6%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="comparison-header">
+                        <h3>Regional Performance</h3>
+                    </div>
+                    <div class="regional-stats">
+                        <div class="regional-item">
+                            <div class="regional-info">
+                                <span class="region-name">North America</span>
+                                <span class="region-value">$1.2M</span>
+                            </div>
+                            <div class="regional-bar">
+                                <div class="regional-fill" style="width: 42%;" data-region="na"></div>
+                            </div>
+                            <span class="region-percentage">42%</span>
+                        </div>
+
+                        <div class="regional-item">
+                            <div class="regional-info">
+                                <span class="region-name">Europe</span>
+                                <span class="region-value">$890K</span>
+                            </div>
+                            <div class="regional-bar">
+                                <div class="regional-fill" style="width: 31%;" data-region="eu"></div>
+                            </div>
+                            <span class="region-percentage">31%</span>
+                        </div>
+
+                        <div class="regional-item">
+                            <div class="regional-info">
+                                <span class="region-name">Asia Pacific</span>
+                                <span class="region-value">$520K</span>
+                            </div>
+                            <div class="regional-bar">
+                                <div class="regional-fill" style="width: 18%;" data-region="ap"></div>
+                            </div>
+                            <span class="region-percentage">18%</span>
+                        </div>
+
+                        <div class="regional-item">
+                            <div class="regional-info">
+                                <span class="region-name">Others</span>
+                                <span class="region-value">$237K</span>
+                            </div>
+                            <div class="regional-bar">
+                                <div class="regional-fill" style="width: 9%;" data-region="ot"></div>
+                            </div>
+                            <span class="region-percentage">9%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Data Stream -->
+    <section class="realtime-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">LIVE DATA STREAM</h2>
+                <p class="section-subtitle">Real-time activity monitoring</p>
+                <span class="live-pulse"><i class="fas fa-circle"></i> LIVE</span>
+            </div>
+
+            <div class="data-stream">
+                <div class="stream-item" data-delay="0">
+                    <div class="stream-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="stream-content">
+                        <div class="stream-title">New Order #15423</div>
+                        <div class="stream-detail">$248.99 • New York, USA</div>
+                    </div>
+                    <div class="stream-time">2s ago</div>
+                </div>
+
+                <div class="stream-item" data-delay="1">
+                    <div class="stream-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="stream-content">
+                        <div class="stream-title">New User Registration</div>
+                        <div class="stream-detail">Premium Plan • London, UK</div>
+                    </div>
+                    <div class="stream-time">5s ago</div>
+                </div>
+
+                <div class="stream-item" data-delay="2">
+                    <div class="stream-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="stream-content">
+                        <div class="stream-title">Payment Received</div>
+                        <div class="stream-detail">$1,299.00 • Tokyo, Japan</div>
+                    </div>
+                    <div class="stream-time">8s ago</div>
+                </div>
+
+                <div class="stream-item" data-delay="3">
+                    <div class="stream-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stream-content">
+                        <div class="stream-title">Milestone Reached</div>
+                        <div class="stream-detail">45K Active Users</div>
+                    </div>
+                    <div class="stream-time">12s ago</div>
+                </div>
+
+                <div class="stream-item" data-delay="4">
+                    <div class="stream-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="stream-content">
+                        <div class="stream-title">Alert: High Traffic</div>
+                        <div class="stream-detail">+285% from average</div>
+                    </div>
+                    <div class="stream-time">15s ago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe-section" id="subscribe">
+        <div class="container">
+            <div class="subscribe-content">
+                <div class="geometric-decoration-small">
+                    <div class="line-decoration line-1"></div>
+                    <div class="line-decoration line-2"></div>
+                </div>
+                
+                <h2 class="subscribe-title">GET INSIGHTS DELIVERED</h2>
+                <p class="subscribe-subtitle">Subscribe to receive weekly business intelligence reports</p>
+                
+                <form class="subscribe-form">
+                    <input type="email" class="subscribe-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="subscribe-button">SUBSCRIBE NOW</button>
+                </form>
+
+                <div class="subscribe-features">
+                    <div class="feature-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Weekly Reports</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure & Private</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>No Spam</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DATAVISION</div>
+                <div class="footer-text">Data-Driven Insights for Modern Business</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2024 DataVision. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

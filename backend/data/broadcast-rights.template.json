@@ -1,0 +1,28 @@
+[
+  {
+    "competition": "EPL",
+    "countryCode": "RW",
+    "verifiedBy": "REPLACE-WITH-YOUR-NAME",
+    "providers": [
+      {
+        "name": "Canal+",
+        "type": "tv",
+        "requiresSubscription": true,
+        "notes": "Named as rights holder in a 2021 court ruling. Check it is still current, then add the official https link."
+      }
+    ]
+  },
+  {
+    "competition": "UCL",
+    "countryCode": "RW",
+    "verifiedBy": "REPLACE-WITH-YOUR-NAME",
+    "providers": [
+      {
+        "name": "Canal+",
+        "type": "tv",
+        "requiresSubscription": true,
+        "notes": "Named as rights holder in a 2021 court ruling. Check it is still current, then add the official https link."
+      }
+    ]
+  }
+]
