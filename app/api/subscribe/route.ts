@@ -1,14 +1,10 @@
+import { Prisma } from '@prisma/client';
 import { NextResponse, type NextRequest } from 'next/server';
+import { prisma } from '@/lib/prisma';
 
 export const dynamic = 'force-dynamic';
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-/**
- * In-memory subscriber list. Replace with a real datastore (or a third-party
- * mailing-list provider) before running this anywhere but locally.
- */
-const subscribers = new Set<string>();
 
 /** POST /api/subscribe { email } */
 export async function POST(request: NextRequest) {
@@ -30,8 +26,17 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'Please enter a valid email address.' }, { status: 400 });
   }
 
-  const alreadySubscribed = subscribers.has(email);
-  subscribers.add(email);
+  let alreadySubscribed = false;
+
+  try {
+    await prisma.subscriber.create({ data: { email } });
+  } catch (error) {
+    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2002') {
+      alreadySubscribed = true;
+    } else {
+      throw error;
+    }
+  }
 
   return NextResponse.json(
     {
