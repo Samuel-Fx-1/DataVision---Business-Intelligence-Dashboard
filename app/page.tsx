@@ -17,7 +17,7 @@ export const dynamic = 'force-dynamic';
 const DEFAULT_PERIOD: Period = '1y';
 
 export default async function HomePage() {
-  const data = getDashboard(DEFAULT_PERIOD);
+  const data = await getDashboard(DEFAULT_PERIOD);
 
   return (
     <>
