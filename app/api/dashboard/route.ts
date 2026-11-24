@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
  * GET /api/dashboard?period=7d|1m|3m|1y|all
  * Returns the full dashboard payload for the requested time period.
  */
-export function GET(request: NextRequest) {
+export async function GET(request: NextRequest) {
   const requested = request.nextUrl.searchParams.get('period') ?? '1y';
 
   if (!isPeriod(requested)) {
@@ -18,7 +18,9 @@ export function GET(request: NextRequest) {
     );
   }
 
-  return NextResponse.json(getDashboard(requested), {
+  const data = await getDashboard(requested);
+
+  return NextResponse.json(data, {
     headers: { 'Cache-Control': 'no-store' },
   });
 }
