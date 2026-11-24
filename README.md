@@ -10,15 +10,20 @@ Rebuilt as a **Next.js (App Router) + React 19** application running on Node.js,
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
+npx prisma migrate dev    # creates the SQLite database and applies the schema (seeds it too)
+npm run db:seed           # (re)loads the demo data into the database
+npm run dev               # http://localhost:3000
 ```
 
-| Script              | Description                |
-| ------------------- | -------------------------- |
-| `npm run dev`       | Start the dev server       |
-| `npm run build`     | Production build           |
-| `npm start`         | Serve the production build |
-| `npm run typecheck` | `tsc --noEmit`             |
+| Script                | Description                      |
+| --------------------- | -------------------------------- |
+| `npm run dev`         | Start the dev server             |
+| `npm run build`       | Production build                 |
+| `npm start`           | Serve the production build       |
+| `npm run typecheck`   | `tsc --noEmit`                   |
+| `npm run db:migrate`  | Apply Prisma schema changes      |
+| `npm run db:seed`     | Seed the database with demo data |
+| `npm run db:studio`   | Open Prisma Studio               |
 
 ## What changed in the rebuild
 
@@ -60,10 +65,10 @@ A few small deviations from the original vanilla JS, all deliberate:
 
 ## Roadmap
 
-1. Add a Prisma + SQLite database layer (`prisma/schema.prisma`, `.env`, `.env.example`, `prisma/seed.ts`)
-2. Replace the hard-coded data source in `lib/data.ts` with Prisma queries through a shared client
-3. Persist newsletter subscribers to the database via `POST /api/subscribe`
-4. Update setup documentation and mark the PR ready for review
+1. [x] Add a Prisma + SQLite database layer (`prisma/schema.prisma`, `.env`, `.env.example`, `prisma/seed.ts`)
+2. [x] Replace the hard-coded data source in `lib/data.ts` with Prisma queries through a shared client
+3. [x] Persist newsletter subscribers to the database via `POST /api/subscribe`
+4. [x] Update setup documentation and mark the PR ready for review
 
 ## Project structure
 
@@ -79,8 +84,12 @@ datavision/
 ├── components/                 # React components (client + server)
 ├── lib/
 │   ├── types.ts                # Shared domain types
-│   ├── data.ts                 # Server-side data source
+│   ├── prisma.ts               # Shared Prisma client
+│   ├── data.ts                 # Server-side data source (reads via Prisma)
 │   └── chartConfigs.ts         # Chart.js configurations (client-only)
+├── prisma/
+│   ├── schema.prisma           # Database schema (SQLite)
+│   └── seed.ts                 # Demo data seed
 ├── css/
 │   └── style.css               # UNCHANGED from the original
 └── legacy/                     # Original static version, kept for reference
@@ -108,7 +117,7 @@ curl -X POST http://localhost:3000/api/subscribe \
 ```
 
 `201` on subscribe, `200` if already subscribed, `400` for a missing or invalid address.
-Subscribers are held in memory — swap in a real datastore before deploying.
+Subscribers are persisted to the SQLite database via Prisma.
 
 ### `GET /api/stream`
 
@@ -194,7 +203,7 @@ Returns the activity feed used by the Live Data Stream section.
 
 ## Not yet implemented
 
-- Real database / WebSocket data source (`lib/data.ts` is the seam to replace)
+- WebSocket / live-updating data source
 - Authentication, saved dashboards, report scheduling
 - PDF/CSV export, custom date ranges, dark/light toggle
 
