@@ -1,11 +1,8 @@
 'use client';
 
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState, type CSSProperties } from 'react';
-
-const NAV_LINKS = [
-  { href: '#home', label: 'HOME' },
-  { href: '#subscribe', label: 'SUBSCRIBE' },
-];
 
 /**
  * `.menu-toggle` has no rules in style.css, so the original styled it entirely
@@ -38,6 +35,7 @@ export default function Navigation() {
   const [activeId, setActiveId] = useState('home');
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const checkWidth = () => {
@@ -69,19 +67,39 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const closeMenu = () => setMenuOpen(false);
+
+  // SUBSCRIBE scrolls to the section on the landing page and links to it from
+  // the dashboard (plain anchor, so the browser lands on #subscribe).
+  const subscribeHref = pathname === '/' ? '#subscribe' : '/#subscribe';
+
   return (
     <nav className="main-nav">
-      <div className="logo">DATAVISION</div>
+      <Link href="/" className="logo" onClick={closeMenu}>
+        DATAVISION
+      </Link>
       <div className="nav-links" style={isMobile && menuOpen ? OPEN_MENU_STYLE : undefined}>
-        {NAV_LINKS.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className={`nav-link${activeId === link.href.slice(1) ? ' active' : ''}`}
-          >
-            {link.label}
-          </a>
-        ))}
+        <Link
+          href="/"
+          className={`nav-link${pathname === '/' && activeId !== 'subscribe' ? ' active' : ''}`}
+          onClick={closeMenu}
+        >
+          HOME
+        </Link>
+        <Link
+          href="/dashboard"
+          className={`nav-link${pathname === '/dashboard' ? ' active' : ''}`}
+          onClick={closeMenu}
+        >
+          DASHBOARD
+        </Link>
+        <a
+          href={subscribeHref}
+          className={`nav-link${pathname === '/' && activeId === 'subscribe' ? ' active' : ''}`}
+          onClick={closeMenu}
+        >
+          SUBSCRIBE
+        </a>
       </div>
       {isMobile && (
         <button

@@ -1,23 +1,14 @@
 import ChatButton from '@/components/ChatButton';
-import DataComparison from '@/components/DataComparison';
 import HeroSection from '@/components/HeroSection';
-import KpiDashboard from '@/components/KpiDashboard';
 import Navigation from '@/components/Navigation';
-import RealtimeStream from '@/components/RealtimeStream';
 import SiteFooter from '@/components/SiteFooter';
 import SmoothScroll from '@/components/SmoothScroll';
 import SocialSidebar from '@/components/SocialSidebar';
 import SubscribeSection from '@/components/SubscribeSection';
-import TrendAnalysis from '@/components/TrendAnalysis';
-import { getDashboard } from '@/lib/data';
-import type { Period } from '@/lib/types';
+import { getHeroStats } from '@/lib/data';
 
-export const dynamic = 'force-dynamic';
-
-const DEFAULT_PERIOD: Period = '1y';
-
-export default async function HomePage() {
-  const data = await getDashboard(DEFAULT_PERIOD);
+export default function HomePage() {
+  const stats = getHeroStats();
 
   return (
     <>
@@ -26,17 +17,9 @@ export default async function HomePage() {
       <SocialSidebar />
       <ChatButton />
 
-      <HeroSection stats={data.heroStats} />
-      <KpiDashboard kpis={data.kpis} />
-      <TrendAnalysis
-        revenue={data.revenue}
-        users={data.users}
-        initialPeriod={DEFAULT_PERIOD}
-      />
-      <DataComparison comparison={data.comparison} regions={data.regions} />
-      <RealtimeStream initialEvents={data.stream} />
-
+      <HeroSection stats={stats} />
       <SubscribeSection />
+
       <SiteFooter />
     </>
   );
