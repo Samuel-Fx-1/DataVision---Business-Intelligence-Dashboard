@@ -71,7 +71,9 @@ A few small deviations from the original vanilla JS, all deliberate:
 datavision/
 ├── app/
 │   ├── layout.tsx              # Root layout, fonts, stylesheet import
-│   ├── page.tsx                # Server component, renders the dashboard
+│   ├── page.tsx                # Landing page (hero + subscribe)
+│   ├── dashboard/
+│   │   └── page.tsx            # Dashboard page (KPIs, charts, stream)
 │   └── api/
 │       ├── dashboard/route.ts  # GET  /api/dashboard?period=7d|1m|3m|1y|all
 │       ├── stream/route.ts     # GET  /api/stream
