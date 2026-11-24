@@ -1,0 +1,76 @@
+// DataVision database schema — SQLite for local development.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Kpi {
+  id        Int    @id @default(autoincrement())
+  icon      String
+  value     Float
+  initial   String
+  label     String
+  change    Float
+  direction String // 'positive' | 'negative'
+  position  Int
+}
+
+model RevenuePoint {
+  id            Int     @id @default(autoincrement())
+  period        String // '7d' | '1m' | '3m' | '1y' | 'all'
+  position      Int
+  label         String
+  current       Float?
+  previous      Float?
+  currentLabel  String
+  previousLabel String
+
+  @@unique([period, position])
+}
+
+model UserGrowthPoint {
+  id            Int     @id @default(autoincrement())
+  period        String // '7d' | '1m' | '3m' | '1y' | 'all'
+  position      Int
+  label         String
+  current       Int?
+  previous      Int?
+  currentLabel  String
+  previousLabel String
+
+  @@unique([period, position])
+}
+
+model CategorySale {
+  id    Int    @id @default(autoincrement())
+  label String @unique
+  value Float
+  color String
+}
+
+model RegionPerformance {
+  id         Int    @id @default(autoincrement())
+  key        String @unique
+  name       String
+  value      String
+  percentage Float
+}
+
+model Activity {
+  id      String @id
+  icon    String
+  title   String
+  detail  String
+  seconds Int
+}
+
+model Subscriber {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
