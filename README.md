@@ -58,6 +58,13 @@ A few small deviations from the original vanilla JS, all deliberate:
 - **Parallax opacity** is clamped at `0`; the original could go negative, which browsers
   treat as invalid and snap back to fully opaque.
 
+## Roadmap
+
+1. Add a Prisma + SQLite database layer (`prisma/schema.prisma`, `.env`, `.env.example`, `prisma/seed.ts`)
+2. Replace the hard-coded data source in `lib/data.ts` with Prisma queries through a shared client
+3. Persist newsletter subscribers to the database via `POST /api/subscribe`
+4. Update setup documentation and mark the PR ready for review
+
 ## Project structure
 
 ```
